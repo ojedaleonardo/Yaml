@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Stack para configurar un rol, una regla de AWS Config y remediación automática para habilitar IMDSv2 en instancias EC2.
+
+Resources:
+  AutomationAssumeRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "ec2-imdsv2-remediation"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - "ssm.amazonaws.com"
+                - "config.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: "ModifyIMDSv2Policy"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "ec2:ModifyInstanceMetadataOptions"
+                  - "ec2:DescribeInstances"
+                  - "ssm:StartAutomationExecution"
+                  - "ssm:GetAutomationExecution"
+                Resource: "*"
+
+  ConfigRuleIMDSv2:
+    Type: "AWS::Config::ConfigRule"
+    Properties:
+      ConfigRuleName: "ec2-imdsv2-remediation"
+      Description: "Check whether EC2 instances are configured to require IMDSv2."
+      Source:
+        Owner: "AWS"
+        SourceIdentifier: "EC2_IMDSV2_CHECK"
+
+  ConfigRemediationIMDSv2:
+    Type: "AWS::Config::RemediationConfiguration"
+    Properties:
+      ConfigRuleName: !Ref ConfigRuleIMDSv2
+      TargetId: "AWSConfigRemediation-EnforceEC2InstanceIMDSv2"
+      TargetType: "SSM_DOCUMENT"
+      Automatic: true
+      MaximumAutomaticAttempts: 5
+      RetryAttemptSeconds: 60
+      Parameters:
+        AutomationAssumeRole:
+          StaticValue:
+            Values:
+              - !GetAtt AutomationAssumeRole.Arn
+        InstanceId:
+          ResourceValue:
+            Value: "RESOURCE_ID"
