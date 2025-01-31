@@ -15,7 +15,9 @@ Este stack realiza las siguientes acciones:
 ## 🔧 Requisitos previos
 
 🔹 Permisos para desplegar stacks de AWS CloudFormation.
+
 🔹 AWS Config habilitado en la cuenta.
+
 🔹 AWS Systems Manager habilitado y configurado en las instancias EC2.
 
 ## 🚀 Implementación
