@@ -5,7 +5,7 @@ Este repositorio contiene dos stacks de AWS CloudFormation para habilitar la enc
 ## 📂 Descripción de los Stacks
 
 ### 📌 `UnencryptedVolumes.yaml`
-✅ Crea la IAM Role **`EncryptionRemediationRole`** con los permisos necesarios para manejar la encriptación de volúmenes.
+✅ Crea el IAM Role **`EncryptionRemediationRole`** con los permisos necesarios para manejar la encriptación de volúmenes.
 ✅ Crea una Managed Policy **`EncryptEBSAutomationRole-policy`** con permisos para:
 - 🚀 Operaciones de **CloudFormation** (crear, describir y eliminar stacks).
 - 📦 Operaciones de **EC2** (crear y adjuntar volúmenes, gestionar snapshots, modificar atributos de instancias, etc.).
