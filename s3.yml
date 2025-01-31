@@ -1,8 +1,0 @@
-Resources:
-  S3SSLConfigRule:
-    Type: "AWS::Config::ConfigRule"
-    Properties: 
-      ConfigRuleName: "s3-bucket-ssl-requests-only"
-      Source: 
-        Owner: "AWS"
-        SourceIdentifier: "S3_BUCKET_SSL_REQUESTS_ONLY"
