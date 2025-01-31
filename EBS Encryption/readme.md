@@ -13,6 +13,7 @@ Este repositorio contiene dos stacks de AWS CloudFormation para habilitar la enc
 - 🖥️ Operaciones de **Lambda** (crear, eliminar e invocar funciones).
 - 🔑 Uso de **claves KMS** para cifrado y descifrado de datos.
 - 🔐 **IAM** para gestionar roles y permisos relacionados con la automatización de EBS.
+  
 ✅ Exporta los valores del **ARN de la role** y el **ID de la clave KMS**.
 
 ### 📌 `ConfigSSM.yaml`
