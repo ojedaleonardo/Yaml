@@ -13,7 +13,7 @@ Este repositorio contiene dos stacks de AWS CloudFormation para habilitar la enc
 - 🖥️ Operaciones de **Lambda** (crear, eliminar e invocar funciones).
 - 🔑 Uso de **claves KMS** para cifrado y descifrado de datos.
 - 🔐 **IAM** para gestionar roles y permisos relacionados con la automatización de EBS.
-  
+- 
 ✅ Exporta los valores del **ARN de la role** y el **ID de la clave KMS**.
 
 ### 📌 `ConfigSSM.yaml`
@@ -60,6 +60,8 @@ aws cloudformation create-stack --stack-name ConfigSSMStack \
 ---
 
 ## 📝 Licencia
-Este proyecto se encuentra bajo la licencia **MIT**. Puedes modificar y distribuir el código según sea necesario.
+Este proyecto se encuentra bajo la licencia [**MIT**](https://opensource.org/licenses/MIT). Puedes modificar y distribuir el código según sea necesario.
 
 📌 **Autor:** Leonardo Ojeda
+
+
