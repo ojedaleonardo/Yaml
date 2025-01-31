@@ -5,6 +5,7 @@ Este repositorio está destinado a almacenar diversos stacks de AWS CloudFormati
 ## 📂 Estructura del Repositorio
 
 - **EBS Encryption/** → Contiene stacks para la encriptación de volúmenes EBS mediante AWS Config y Systems Manager.
+- **IMDSv1 to V2/** → Contiene un stack para la modificación de IMDSv1 a IMDSv2.
 
 ## 🚀 Uso del Repositorio
 
