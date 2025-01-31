@@ -56,7 +56,9 @@ aws cloudformation delete-stack --stack-name ec2-imdsv2-remediation
 ## ℹ️ Notas adicionales
 
 ⚠️ **Este stack aplica la remediación de IMDSv2 de manera automática** en todas las instancias EC2 no conformes.
+
 ⚙️ Puedes modificar el número de intentos automáticos y el intervalo de reintento en la configuración de remediación (`MaximumAutomaticAttempts` y `RetryAttemptSeconds`).
+
 💰 AWS Config puede generar costos adicionales dependiendo del uso y la cantidad de reglas configuradas en tu cuenta.
 
 ---
