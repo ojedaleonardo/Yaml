@@ -18,8 +18,11 @@ Este repositorio contiene dos stacks de AWS CloudFormation para habilitar la enc
 
 ### 📌 `ConfigSSM.yaml`
 ✅ Crea una **regla de AWS Config** (`encrypted-volumes`) que monitorea si los volúmenes EBS están encriptados.
+
 ✅ Crea un **documento de automatización de SSM** (`ENCRYPTunencryptedebsvolume`) que remedia volúmenes no encriptados.
+
 ✅ Configura **AWS Config** para iniciar la automatización de remediación.
+
 ✅ **Importa los valores** de la IAM Role y la KMS Key generados en `UnencryptedVolumes.yaml`.
 
 ---
